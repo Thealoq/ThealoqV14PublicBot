@@ -1,6 +1,6 @@
 {
     "token": "MTAyODI1MjUyMTM2MzQyMzI5NA.GXSoNj.LUcD_TWXA6pOmh2DwNfnRSdXde-KlhOrUkPr24",
     "ClientID": "1028252521363423294",
-    "url":"mongodb://localhost/thealoq",
+    "url":"mongodb+srv://thealoq:lBoCuPJSjNf4AXnX@cluster0.bmkjbyb.mongodb.net/?retryWrites=true&w=majority",
     "footer": "Harry P. 🪄 Thealoq"
 }
