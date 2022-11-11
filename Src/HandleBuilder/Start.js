@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require("path");
 const mongoose = require("mongoose");
 const { Client, GatewayIntentBits, Collection } = require("discord.js");
-const config = global.config = require('../../config.json');
+const config = global.config = require('../../Config.json');
 const client = global.client = new Client({ intents: [32767] });
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
