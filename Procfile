@@ -1,1 +1,1 @@
-worker: node ./Src/Thealoq.js
+worker: node run dev
