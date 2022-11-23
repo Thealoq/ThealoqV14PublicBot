@@ -19,8 +19,8 @@ class Events {
             Veri.save()
         } else {
             const Settings = await GuildSettings.find({ GuildId: message.guild.id, Set: { $elemMatch: { type: "message" } } })
-            if(Settings[0].Set[0].level) return
-            if(Veri.Point >= Settings[0].Set[0].level ) {
+            const Sayi = Settings[0].Set[0].level
+            if(Veri.Point >= Sayi ? Sayi: 0 ) {
              message.member.roles.add(Settings[0].Set[0].role)
             } 
             Veri.Point += 1
