@@ -30,7 +30,8 @@ class Commands {
         }
           
              const PetShop = `${UserData[0].Pets.map(item => `Petlerin: [${Emoji(item.Value)}]  \`${item.Name}\` (${item.level ? item.level : 0})`).join("\n")}`
-             ctx.reply({ embeds: [embed.setDescription(`${PetShop}`)] })
+              
+             ctx.reply({ embeds: [embed.setDescription(`${UserData ? PetShop : "Datan Bulunmuyor"}`)] })
     }
 }
 module.exports = Commands

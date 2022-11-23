@@ -19,7 +19,11 @@ class Commands {
     ];
   }
   async execute(ctx) {
-    if (ctx.user.id !== "1000776223795970108" && !ctx.member.permissions.has("ADMINISTRATOR")) return ctx.reply("Yetkiniz Yeterli Değil")
+    if (
+      ctx.user.id !== "1000776223795970108" &&
+      !ctx.member.permissions.has("ADMINISTRATOR")
+    )
+      return ctx.reply("Yetkiniz Yeterli Değil");
     if (!ctx.options._hoistedOptions[0])
       return ctx.reply("Kanal Belirle Lütfen");
     const Channel = ctx.options._hoistedOptions[0].value;
@@ -33,8 +37,15 @@ class Commands {
         Guild: ctx.guild.id,
         Channels: { type: "Welcome", Status: Boolean, Channel: Channel },
       }).save();
-      return ctx.reply(`başariyla hoş geldin kanali <#${Channel}> ${Boolean ? "Açık" : "Kapalı"}  ayarlandi`);
+      return ctx.reply(
+        `başariyla hoş geldin kanali <#${Channel}> ${
+          Boolean ? "Açık" : "Kapalı"
+        }  ayarlandi`
+      );
     }
+
+    
+
     if (allSettings) {
       await Settings.findOneAndUpdate(
         {
@@ -47,7 +58,11 @@ class Commands {
           },
         }
       );
-      return ctx.reply(`başariyla hoş geldin kanali <#${Channel}> \`${Boolean ? "Açık" : "Kapalı"}\` ayarlandi`);
+      return ctx.reply(
+        `başariyla hoş geldin kanali <#${Channel}> \`${
+          Boolean ? "Açık" : "Kapalı"
+        }\` ayarlandi`
+      );
     }
   }
 }
