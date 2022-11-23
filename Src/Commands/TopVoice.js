@@ -19,7 +19,6 @@ class Commands {
             .setColor("RANDOM")
             let MemberDatas = await MessageData.find({ GuildId: ctx.guild.id }).sort({ Point: -1 }).exec();
             let VoiceMemberData = await MemberData.find({ GuildId: ctx.guild.id })
-            console.log(VoiceMemberData);
             if(MemberDatas.length === 0) return ctx.reply({ embeds: [embed.setDescription(`Herhangi bir kayıt verisi bulunamadı!`)]})
             let ContentMessage = MemberDatas.map((x, i) => `\`${i+1}.\`<@${x.MemberId}> Kullancı \`${x.Point}\` Mesaj Geçmişi Sahip `).join(" \n").toString()
             let ContentVoice = VoiceMemberData.map((x, i) => `\`${i+1}.\`<@${x.MemberId}> Kullancı \`${Cover(x.VoiceTime)}\` Ses Geçmişi Sahip `).join(" \n").toString()
