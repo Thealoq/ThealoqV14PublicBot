@@ -1,9 +1,6 @@
 {
-    "token": "MTAyODI1MjUyMTM2MzQyMzI5NA.GXSoNj.LUcD_TWXA6pOmh2DwNfnRSdXde-KlhOrUkPr24",
-    "tokenalfa": "MTA0MDYwMjIzNjI3Mjc4NzQ1Ng.G98LTs.XVA3r9nodk8Qv9prkgw7Up-CSsFfE7AmCLFkTc",
+    "token": "MTAyODI1MjUyMTM2MzQyMzI5NA.GsGLIG.nrOvpQsjFoG2DjBzfKRWcJgeknDjW6DyDVOZfY",
     "ClientID": "1028252521363423294",
-    "ClientIDAlfa": "1040602236272787456",
     "url":"mongodb+srv://thealoq:lBoCuPJSjNf4AXnX@cluster0.bmkjbyb.mongodb.net/?retryWrites=true&w=majority",
-    "footer": "Harry P. 🪄 Thealoq",
-    "footeralfa": "Harry P. Alfa Version"
+    "footer": "Harry P."
 }

@@ -22,7 +22,7 @@ class Events {
 
             }
         }, 10000 * 60);
-        client.user.setPresence({ activities: [{ name: config.footeralfa }] });
+        client.user.setPresence({ activities: [{ name: config.footer }] });
     }
 }
 module.exports = Events

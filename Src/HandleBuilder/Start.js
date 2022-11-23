@@ -54,7 +54,7 @@ class Handler {
         return mongoose
     }
     Start() {
-        this.Login(config.tokenalfa);
+        this.Login(config.token);
         this.connectMongo(config.url);
         this.initCommands(client);
         this.GetEvents(client);
