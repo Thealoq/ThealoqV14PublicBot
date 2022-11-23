@@ -7,7 +7,6 @@ class Commands {
     constructor() {
         this.name = "secret"
         this.description = "secret"
-        this.on = false
     }
     async execute(ctx) {
       

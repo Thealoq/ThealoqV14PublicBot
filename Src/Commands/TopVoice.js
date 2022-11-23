@@ -10,7 +10,7 @@ class Commands {
         this.description = "top"
         this.options =
             []
-            this.on = true
+            
     }
     async execute(ctx) {
         let embed = new MessageEmbed()

@@ -7,7 +7,7 @@ class Commands {
     constructor() {
         this.name = "daily"
         this.description = "Günlük Coin kazanirsiniz"
-        this.on = true
+        
     }
     async execute(ctx) {
         function Emoji(e) {

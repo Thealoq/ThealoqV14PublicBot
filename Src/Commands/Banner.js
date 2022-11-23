@@ -10,7 +10,7 @@ class Commands {
                 description: `user`,
                 name: "id",
             }]
-            this.on = true
+            
     }
 
 

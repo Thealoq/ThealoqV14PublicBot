@@ -13,7 +13,7 @@ class Commands {
                 description: `seçtiğiniz kişiyinin ne kadar Coin olduğunu söyler`,
                 name: "user",
             }]
-            this.on = true
+            
     }
     async execute(ctx) {
         function Emoji(e) {

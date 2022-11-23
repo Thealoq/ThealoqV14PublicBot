@@ -12,7 +12,7 @@ class Commands {
                 description: `yatiricağiniz bahis miktarı`,
                 name: "bahis",
             }]
-            this.on = true
+            
     }
     async execute(ctx) {
         function Emoji(e) {

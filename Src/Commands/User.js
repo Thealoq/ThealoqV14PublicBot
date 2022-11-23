@@ -16,7 +16,7 @@ const { MessageEmbed } = require("discord.js");
             name: "users",
         }
     ];
-    this.on = true
+    
   }
   async execute(ctx) {
     const Member = ctx.options._hoistedOptions.find(t => t.name == "users")

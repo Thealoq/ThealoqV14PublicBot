@@ -7,7 +7,7 @@ const { MessageEmbed } = require("discord.js");
     this.name = "help";
     this.description = "tüm komutlari gösterir";
     this.options = [];
-    this.on = true
+    
   }
   async execute(ctx) {
     let embed = new MessageEmbed()

@@ -18,7 +18,7 @@ class Commands {
         name: "level",
       },
     ];
-    this.on = true
+    
   }
   async execute(ctx) {
     if (!ctx.member.permissions.has("ADMINISTRATOR"))return ctx.reply("Yetkiniz Yeterli Değil");

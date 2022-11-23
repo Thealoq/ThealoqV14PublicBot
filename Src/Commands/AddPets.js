@@ -23,7 +23,7 @@ class Commands {
         name: "price",
       },
     ];
-    this.on = true
+    
   }
   async execute(ctx) {
     function Emoji(e) {

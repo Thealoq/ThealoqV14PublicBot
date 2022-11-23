@@ -11,7 +11,7 @@ class Commands {
                 description: `user`,
                 name: "id",
             }]
-            this.on = true
+            
     }
     async execute(ctx) {
         const veri = ctx.options._hoistedOptions[0] ? ctx.options._hoistedOptions[0].value : ctx.user.id

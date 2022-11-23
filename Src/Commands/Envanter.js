@@ -7,7 +7,7 @@ class Commands {
     constructor() {
         this.name = "envanter"
         this.description = "envanter gösteriyor"
-        this.on = true
+        
     }
     async execute(ctx) {
         function Emoji(e) {
