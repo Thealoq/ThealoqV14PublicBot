@@ -15,7 +15,7 @@ const { MessageEmbed } = require("discord.js");
     .setFooter({text: config.footer.toString(),iconURL: ctx.client.user.avatarURL({ dynamic: true })})
     .setColor("RANDOM");
     commands.map((x, i) => console.log(x.on))
-    const content = `${commands.map((x, index) => ` ${x.on ? "✅": "❌"} \`/${x.name}\` Açıklama \`${x.description}\` `).join("\n")}`
+    const content = `${commands.map((x, index) => ` ✅ \`/${x.name}\` Açıklama \`${x.description}\` `).join("\n")}`
     ctx.reply({ embeds: [embed.setDescription(`${content}`)]})
 }
 }
