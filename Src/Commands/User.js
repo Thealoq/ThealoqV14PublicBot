@@ -18,8 +18,8 @@ const { MessageEmbed } = require("discord.js");
     ];
   }
   async execute(ctx) {
-    let embed = new MessageEmbed()
     const Member = ctx.options._hoistedOptions.find(t => t.name == "users")
+    let embed = new MessageEmbed()
     .setAuthor({name: ctx.guild.name,iconURL: ctx.guild.iconURL({ dynamic: true }),})
     .setFooter({text: config.footer.toString(),iconURL: ctx.user.avatarURL({ dynamic: true })})
     .setColor("RANDOM");
