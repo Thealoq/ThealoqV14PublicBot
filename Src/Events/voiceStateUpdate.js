@@ -1,7 +1,7 @@
 const config = global.config
 const client = global.client
 const MemberData = require('../schema/UserLenght');
-const GuildSettings = require('../schema/GuildSettings');
+const GuildSettings = require('../schema/NewGuildSettings');
 const Channel = require('../schema/Channel');
 const { Collection } = require("discord.js");
 let DataBase = new Collection()

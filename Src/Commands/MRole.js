@@ -1,6 +1,6 @@
 const config = global.config;
 const client = global.client;
-const MemberData = require("../schema/GuildSettings");
+const MemberData = require("../schema/NewGuildSettings");
 const { MessageEmbed } = require("discord.js");
 class Commands {
   constructor() {

@@ -2,7 +2,7 @@ const config = global.config
 const client = global.client
 const MessageData = require("../schema/MessageData")
 const MessageChannel = require("../schema/MessageChannel")
-const GuildSettings = require("../schema/GuildSettings")
+const GuildSettings = require("../schema/NewGuildSettings")
 class Events {
     constructor() {
         this.name = "messageCreate"
