@@ -32,7 +32,7 @@ const { MessageEmbed } = require("discord.js");
         ctx.reply({ embeds: 
           [embed.setDescription(` <@${Member.value}> üyesinin ses ve chat istatistikleri 
           \n Toplam Mesaj Sayısı \`${MessageDb.Point ? MessageDb.Point : 0}\` 
-          Toplam Ses Sayısı \`${Cover(MemberDb.VoiceTime ? MemberDb.VoiceTime : 0)}\`
+          Toplam Ses Sayısı \`${Cover(MemberDb ? MemberDb.VoiceTime : 0)}\`
           \n **Ses** 
           ${content ? content: "Veriniz Bulunamiyor"} 
           \n **Mesaj** 
