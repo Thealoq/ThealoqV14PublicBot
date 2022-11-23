@@ -25,8 +25,9 @@ class Events {
                 newData.save().catch(err => console.log(err));
             } else {
                 const Settings = await GuildSettings.find({ GuildId: oldState.guild.id, Set: { $elemMatch: { type: "voice" } } })
+                const Sayi = Settings[0]
                if(Cover(UserData.VoiceTime) >= Settings[0].Set[0].level) {
-                oldState.member.roles.add(Settings[0].Set[0].role)
+               oldState.member.roles.add(Settings[0].Set[0].role)
                } 
                 const data = Date.now() - DataBase.get(oldState.member.id)
                 UserData.VoiceTime = data + UserData.VoiceTime
