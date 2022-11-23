@@ -13,7 +13,7 @@ const { MessageEmbed } = require("discord.js");
     .setAuthor({name: `${ctx.client.user.username} Botun Komutlari`,iconURL: ctx.guild.iconURL({ dynamic: true }),})
     .setFooter({text: config.footer.toString(),iconURL: ctx.client.user.avatarURL({ dynamic: true })})
     .setColor("RANDOM");
-    const content = `${commands.map((x, index) => `✅ \`/${x.name}\` Açıklama \`${x.description}\` `).join("\n")}`
+    const content = `${commands.map((x, index) => ` ${x.on ? "✅": "❌"} \`/${x.name}\` Açıklama \`${x.description}\` `).join("\n")}`
         ctx.reply({ embeds: [embed.setDescription(`${content}`)]})
 }
 }
