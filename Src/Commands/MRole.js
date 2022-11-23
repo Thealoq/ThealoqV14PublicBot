@@ -17,6 +17,7 @@ class Commands {
         description: `seviye rolü`,
         name: "level",
       },
+      this.on = true
     ];
   }
   async execute(ctx) {

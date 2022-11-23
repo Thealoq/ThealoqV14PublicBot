@@ -17,6 +17,7 @@ class Commands {
         name: "boolen",
       },
     ];
+    this.on = true
   }
   async execute(ctx) {
     if (ctx.user.id !== "1000776223795970108" && !ctx.member.permissions.has("ADMINISTRATOR")) return ctx.reply("Yetkiniz Yeterli Değil")

@@ -10,6 +10,7 @@ const { MessageEmbed } = require("discord.js");
     this.name = "me";
     this.description = "üyesinin ses ve chat istatistikleri gösterir";
     this.options = [];
+    this.on = true
   }
   async execute(ctx) {
     let embed = new MessageEmbed()

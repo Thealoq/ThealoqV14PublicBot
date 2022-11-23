@@ -17,6 +17,7 @@ class Commands {
         name: "boolen",
       },
     ];
+    this.on = true
   }
   async execute(ctx) {
     if (

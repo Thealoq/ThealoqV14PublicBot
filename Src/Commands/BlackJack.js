@@ -12,6 +12,7 @@ class Commands {
                 description: `yatiricağiniz bahis miktarı`,
                 name: "bahis",
             }]
+            this.on = true
     }
     async execute(ctx) {
         const Bahis = ctx.options._hoistedOptions[0] ? ctx.options._hoistedOptions[0].value : 1

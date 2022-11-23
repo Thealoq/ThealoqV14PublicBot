@@ -6,6 +6,7 @@ class Commands {
   constructor() {
     this.name = "market";
     this.description = "market";
+    this.on = true
   }
   async execute(ctx) {
     let embed = new MessageEmbed()
