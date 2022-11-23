@@ -27,20 +27,16 @@ const { MessageEmbed } = require("discord.js");
     let MessageChannelDb = await MessageChannel.find({ GuildId: ctx.guild.id, MemberId: Member.value })
     let ChannelDb = await ChannelData.find({ GuildId: ctx.guild.id, MemberId: Member.value }) 
     let MemberDb = await MemberData.findOne({ GuildId: ctx.guild.id, MemberId: Member.value })
-    if (MessageDb && MemberDb) {
         const contenttwo = `${MessageChannelDb.map( (t, index) => ` \`${index+1}\` <#${t.Channel}> \`${t.Point}\` `).join("\n")}`
         const content = `${ChannelDb.map((x, index) => `\`${index+1}\` <#${x.Channel}> \`${Cover(x.VoiceTime)}\` `).join("\n")}`
         ctx.reply({ embeds: 
           [embed.setDescription(` <@${Member.value}> üyesinin ses ve chat istatistikleri 
-          \n Toplam Mesaj Sayısı \`${MessageDb.Point}\` 
-          Toplam Ses Sayısı \`${Cover(MemberDb.VoiceTime)}\`
+          \n Toplam Mesaj Sayısı \`${MessageDb.Point ? MessageDb.Point : 0}\` 
+          Toplam Ses Sayısı \`${Cover(MemberDb.VoiceTime ? MemberDb.VoiceTime : 0)}\`
           \n **Ses** 
-          ${content} 
+          ${content ? content: "Veriniz Bulunamiyor"} 
           \n **Mesaj** 
-          ${contenttwo}`)] })
-    } else {
-        ctx.reply("Hiç bir veriniz bulunmuyor")
-    }
+          ${contenttwo ? contenttwo: "Veriniz Bulunamiyor"}`)] })
 }
 }
 
