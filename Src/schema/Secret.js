@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const Secret = mongoose.Schema(
   {
+    GuildID: String,
     Member: String,
     ChannelID: String,
   },

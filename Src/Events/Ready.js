@@ -22,7 +22,7 @@ class Events {
 
             }
         }, 10000 * 60);
-        client.user.setPresence({ activities: [{ name: `${config.footer} ${client.guilds.cache.size} Sunucuya Hizmet Veriyor` }] });
+        client.user.setPresence({ activities: [{ name: `${config.footer} ${client.users.cache.size} Kullancıya Hizmet Veriyor` }] });
     }
 }
 module.exports = Events
