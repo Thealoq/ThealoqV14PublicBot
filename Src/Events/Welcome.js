@@ -39,7 +39,8 @@ class Events {
     if (!allSettings.Channels[0].Status) return;
     if(!GuildSettings) return
     member.roles.add(GuildSettings.Set[0].role).catch(t => { })
-    if (member.guild.channels.cache.get(allSettings.Channels[0].Channel).type === "GUILD_TEXT")
+    const channelid = allSettings.Channels[0].Channel
+    if (member.guild.channels.cache.get(channelid) ? member.guild.channels.cache.get(channelid) : null)
       member.guild.channels.cache.get(allSettings.Channels[0].Channel).send({
         embeds: [embed.setDescription(`${Emoji("Hello")} Sunucumuza Hoşgeldin geldin ${member} Seni Gördüğümüze Sevindik.
         • Hesabın \`${moment(member.user.createdTimestamp).format("LLL")}\` tarihinde \`${moment(member.user.createdTimestamp).fromNow()}\` oluşturulmuş
@@ -49,3 +50,4 @@ class Events {
   }
 }
 module.exports = Events;
+

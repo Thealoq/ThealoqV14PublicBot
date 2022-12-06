@@ -25,8 +25,8 @@ class Events {
         Channels: { $elemMatch: { type: "Goodby" } },
       });
     if (!allSettings) return;
-    if(!allSettings.Channels[0].Status) return
-    if(member.guild.channels.cache.get(allSettings.Channels[0].Channel).type === "GUILD_TEXT")
+    const channelid = allSettings.Channels[0].Channel
+    if (member.guild.channels.cache.get(channelid) ? member.guild.channels.cache.get(channelid) : null)
     member.guild.channels.cache.get(allSettings.Channels[0].Channel).send({
       embeds: [
         embed.setDescription(
