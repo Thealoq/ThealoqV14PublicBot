@@ -8,6 +8,7 @@ class Events {
         this.name = "messageCreate"
     }
     async execute(message) {
+        console.log(message.content);
         let Veri = await MessageData.findOne({ GuildId: message.guild.id, MemberId: message.member.id })
         let Channel = await MessageChannel.findOne({ GuildId: message.guild.id, Channel: message.channel.id, MemberId: message.member.id })
         if(message.author.bot) return

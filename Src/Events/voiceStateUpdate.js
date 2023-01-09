@@ -14,6 +14,7 @@ class Events {
         if ((!oldState?.channelId) && (newState?.channelId)) {
             DataBase.set(oldState.member.id, Date.now())
         } else if ((oldState && oldState.channelId) && (newState && !newState.channelId)) {
+            if(!oldState.member.id) return
             let UserData = await MemberData.findOne({ GuildId: oldState.guild.id, MemberId: oldState.member.id })
             let ChannelData = await Channel.findOne({ GuildId: oldState.guild.id, MemberId: oldState.member.id, Channel: oldState.channelId, parentID: oldState.channel.parentId })
             if(UserData == null) {

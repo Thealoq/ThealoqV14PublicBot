@@ -8,14 +8,14 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 class Handler {
     async initCommands() {
-        const ClientID = config.dev ? config.devId : config.ClientID
+        const ClientID = config.ClientID;
         const commands = global.commands = [];
         let commandsPath = path.join(__dirname, "../Commands")
         fs.readdirSync(commandsPath).filter(file => file.endsWith(".js")).forEach(file => {
             let command = new (require(`../Commands/${file}`))(client)
             commands.push(command);
         });
-        const rest = new REST({ version: '9' }).setToken(config.dev ? config.devtoken : config.token);
+        const rest = new REST({ version: '9' }).setToken(config.token);
         (async () => {
             try {
                 console.log('Started refreshing application (/) commands.');
@@ -54,7 +54,7 @@ class Handler {
         return mongoose
     }
     Start() {
-        this.Login(config.dev ? config.devtoken : config.token);
+        this.Login(config.token);
         this.connectMongo(config.url);
         this.initCommands(client);
         this.GetEvents(client);
