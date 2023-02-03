@@ -1,7 +1,7 @@
 const { BuildCommands, BuildSlash, EventLoader } = require("./Build")
 const config = global.config = {
   "token": "MTAyODI1MjUyMTM2MzQyMzI5NA.GAEwoi.gMYs5QBpXIkIe6FI920LDzEiwFCgzeedMqnhtM",
-  "url": "mongodb://localhost:27017/thealoq",
+  "url": "mongodb+srv://thealoq:lBoCuPJSjNf4AXnX@cluster0.bmkjbyb.mongodb.net/?retryWrites=true&w=majority",
   "prefix": ".",
   "footer":"Ghost 💛 Thealoq"
 }
