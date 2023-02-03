@@ -1,4 +1,4 @@
-global.config = require("./config.json")
+const config = global.config = require("./config.json")
 const mongoose = require('mongoose');
 const chalk = require("chalk")
 require("./underline.js")
