@@ -13,6 +13,6 @@ mongoose.set('strictQuery', true).connect(config.url, {
   useUnifiedTopology: true,
 }).then(e => console.log(chalk.magenta("🟣 [Event] Database Bağlandı")))
 Underline.Ghost.on("ready", () => {
-  BuildSlash(`${__dirname}/Src/Commands//`,  Underline.Ghost, global.config.token,  Underline.Ghost.user.id)
-  EventLoader(`${__dirname}/Src/Events//`,  Underline.Ghost)
+  BuildSlash(`${__dirname}/Src/Commands/`,  Underline.Ghost, global.config.token,  Underline.Ghost.user.id)
+  EventLoader(`${__dirname}/Src/Events/`,  Underline.Ghost)
 })
