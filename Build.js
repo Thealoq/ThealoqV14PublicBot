@@ -19,10 +19,10 @@ function BuildCommands(path, client) {
         console.log(`❌ ${commands} yüklenemedi`);
       }
     } else {
-      readdirSync(path + commands + "\\").forEach(folder => {
+      readdirSync(path + commands + "/").forEach(folder => {
         if (path.endsWith(".js")) return
         else {
-          const command = require(`${path}` + commands + "\\" + folder)
+          const command = require(`${path}` + commands + "/" + folder)
           if (command.name) {
             client.commands.set(command.name, command)
             command.aliases.forEach(aliases => {
@@ -91,10 +91,10 @@ const EventLoader = function (path, client) {
         console.log(chalk.red(`🔴 ${file} yüklenemedi`));
       }
     } else {
-      readdirSync(path + EventLoader + "\\").forEach(folder => {
+      readdirSync(path + EventLoader + "/").forEach(folder => {
         if (path.endsWith(".js")) return
         else {
-          const event = new (require(`${path}` + EventLoader + "\\" + folder))()
+          const event = new (require(`${path}` + EventLoader + "/" + folder))()
           if (event.name) {
             client.on(event.name, event.execute)
             console.log(chalk.magenta(`🟣 [Event] Başarıyla ` + event.name + " event başarıyla yüklendi"));
