@@ -1,4 +1,4 @@
 # flyctl launch added from .gitignore
-**\node_modules
-**\yarn.lock
+node_modules
+yarn.lock
 fly.toml
