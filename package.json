@@ -1,22 +1,21 @@
 {
-  "name": "thealoqv13slash",
+  "name": "thealoq-projectapp",
   "version": "1.0.0",
   "description": "",
-  "main": "./Src/Thealoq.js",
+  "main": "Main.js",
   "scripts": {
     "dev": "node ."
   },
-  "keywords": [
-    "thealoq"
-  ],
+  "keywords": [],
   "author": "thealoq",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/rest": "^1.3.0",
-    "discord-modals": "^1.3.9",
-    "discord.js": "^13.11.0",
+    "chalk": "4",
+    "discord.js": "^14.7.1",
+    "fs": "^0.0.1-security",
     "moment": "^2.29.4",
-    "mongoose": "^6.3.4",
-    "node-fetch": "^2.6.7"
+    "mongoose": "^6.8.0",
+    "ms": "^2.1.3",
+    "node-fetch": "2"
   }
 }

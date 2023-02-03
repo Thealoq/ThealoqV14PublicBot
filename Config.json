@@ -1,7 +1,6 @@
 {
-    "token": "MTAyODI1MjUyMTM2MzQyMzI5NA.GAEwoi.gMYs5QBpXIkIe6FI920LDzEiwFCgzeedMqnhtM",
-    "ClientID": "1028252521363423294",
-    "url":"mongodb+srv://thealoq:lBoCuPJSjNf4AXnX@cluster0.bmkjbyb.mongodb.net/?retryWrites=true&w=majority",
-    "footer": "Ghost 👻",
-    "botOwner": ["1000776223795970108"]
+        "token": "MTAyODI1MjUyMTM2MzQyMzI5NA.GAEwoi.gMYs5QBpXIkIe6FI920LDzEiwFCgzeedMqnhtM",
+        "url": "mongodb://localhost:27017/thealoq",
+        "prefix": ".",
+        "footer":"Ghost 💛 Thealoq"
 }
