@@ -1,8 +1,13 @@
-const config = global.config = require("./config.json")
+const { BuildCommands, BuildSlash, EventLoader } = require("./Build")
+const config = global.config = {
+  "token": "MTAyODI1MjUyMTM2MzQyMzI5NA.GAEwoi.gMYs5QBpXIkIe6FI920LDzEiwFCgzeedMqnhtM",
+  "url": "mongodb://localhost:27017/thealoq",
+  "prefix": ".",
+  "footer":"Ghost 💛 Thealoq"
+}
 const mongoose = require('mongoose');
 const chalk = require("chalk")
 require("./underline.js")
-const { BuildCommands, BuildSlash, EventLoader } = require("./Build")
 mongoose.set('strictQuery', true).connect(config.url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
