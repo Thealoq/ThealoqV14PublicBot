@@ -8,7 +8,7 @@ module.exports = {
         .addStringOption((option) => option.setRequired(false).setName('id').setDescription('Just enter the id')),
     run: async (ctx) => {
         let embed = new EmbedBuilder()
-        .setColor(`RANDOM`)
+        .setColor(`Aqua`)
       ctx.reply({
         embeds: [embed.setDescription(`
       \`❯\` Sunucunda Toplam ${ctx.guild.members.cache.filter(s => s.voice.channel).size} Kişi Ses Kanalında Aktif 
