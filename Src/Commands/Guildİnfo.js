@@ -10,8 +10,8 @@ module.exports = {
         .setColor(`Aqua`)
       ctx.reply({
         embeds: [embed.setDescription(`
-      \`❯\` Sunucunda Toplam ${ctx.guild.members.cache.filter(s => s.voice.channel).size} Kişi Ses Kanalında Aktif 
-      \`❯\` Sunucu da şuan da toplam ${ctx.guild.memberCount} üye var 
+      \`❯\` A Total of ${ctx.guild.members.cache.filter(s => s.voice.channel).size} Person on Your Server is Active on the Voice Channel
+      \`❯\` There are a total of ${ctx.guild.memberCount} members on the server right now.
        `)]
       })
         }
