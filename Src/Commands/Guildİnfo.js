@@ -4,8 +4,7 @@ const fetch = require('node-fetch');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("info")
-        .setDescription("show guild info")
-        .addStringOption((option) => option.setRequired(false).setName('id').setDescription('Just enter the id')),
+        .setDescription("show guild info"),
     run: async (ctx) => {
         let embed = new EmbedBuilder()
         .setColor(`Aqua`)
