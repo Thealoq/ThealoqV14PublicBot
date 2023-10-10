@@ -1,12 +1,17 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { EmbedBuilder } = require("discord.js");
 const fetch = require("node-fetch");
-const Guild = Underline.Model.Guild
-const client = Underline.Ghost
+//const Guild = Underline.Model.Guild
+const client = Underline.Thealoq
 module.exports = {
+    options : {
+        developer: false,
+        public: true,
+        inactive :false,
+    },
     data: new SlashCommandBuilder()
         .setName("summoner")
-        .setDescription("you can check your account information")
+        .setDescription("Lol Hesabinizi Durumunu Gösterir")
         .addStringOption((option) => option.setRequired(true).setName('summoner').setDescription('set a name').setMaxLength(16))
         .addStringOption((option) => option.setRequired(false).setName('server').setDescription('select server')
             .addChoices(

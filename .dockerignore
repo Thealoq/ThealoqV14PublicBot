@@ -1,4 +1,6 @@
-# flyctl launch added from .gitignore
-node_modules
-yarn.lock
 fly.toml
+.idea/discord.xml
+Dockerfile
+.dockerignore
+node_modules
+.git

@@ -1,0 +1,35 @@
+# fly.toml app configuration file generated for sakuradiscordbot on 2023-06-04T11:55:29+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "sakuradiscordbot"
+kill_signal = "SIGINT"
+kill_timeout = 5
+primary_region = "ams"
+processes = []
+
+[build]
+
+[env]
+  PORT = "3000" 
+
+[experimental]
+  auto_rollback = true
+
+[[services]]
+  http_checks = []
+  internal_port = 3000 
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+[services.tcp_checks]
+  grace_period = "1s"
+  interval = "15s"
+  restart_limit = 0
+  timeout = "2s"

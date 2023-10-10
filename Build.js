@@ -1,7 +1,9 @@
 const chalk = require("chalk")
-const { Collection,Routes } = require("discord.js")
+const { Collection,Routes, PermissionsBitField} = require("discord.js")
 const { readdirSync } = require("fs")
 const { REST } = require('@discordjs/rest');
+const Status = chalk.hex('#0ed3e5')
+const Danger = chalk.hex('#ea0c0c')
 function BuildCommands(path, client) {
   client.commands = new Collection();
   client.aliases = new Collection();
@@ -14,7 +16,7 @@ function BuildCommands(path, client) {
         command.aliases.forEach(aliases => {
           client.aliases.set(aliases, command)
         });
-        console.log(chalk.green(`🟢 [${index}][Command] Başarıyla ` + command.name + " komutu başarıyla yüklendi"));
+        console.log(chalk.green(`💚 [${index}][Command] Başarıyla ` + command.name + " komutu başarıyla yüklendi"));
       } else {
         console.log(`❌ ${commands} yüklenemedi`);
       }
@@ -38,7 +40,7 @@ function BuildCommands(path, client) {
   })
 }
 function BuildSlash(path, client, token, id, name) {
-  data = new Array
+  const data = []
   client.slashCommands = new Collection();
   readdirSync(path).forEach((slashCommands, index) => {
   index = index+1
@@ -47,7 +49,7 @@ function BuildSlash(path, client, token, id, name) {
       if (!slashCommand.data.name) return console.log(chalk.red("Slash command name required"))
       if (!slashCommand.data.description) return console.log(chalk.red("Slash command descriptions required"))
       client.slashCommands.set(slashCommand.data.name, slashCommand)
-      console.log(chalk.yellow(`🟡 [${index}][Slash] Başarıyla ${slashCommand.data.name} event başarıyla yüklendi`));
+      console.log(chalk.yellow(`💛 [${index}][Slash] Başarıyla ${slashCommand.data.name} event başarıyla yüklendi`));
       data.push({
         name: slashCommand.data.name,
         description: slashCommand.data.description,
@@ -59,10 +61,23 @@ function BuildSlash(path, client, token, id, name) {
           : null,
       })
     } else {
-      readdirSync(path + commands + "\\").forEach(folder => {
+      readdirSync(path + slashCommands + "/").forEach(folder => {
         if (path.endsWith(".js")) return
         else {
-          const SlashCommand = require(`${path}` + slashCommands + "\\" + folder)
+          const SlashCommand = require(`${path}` + slashCommands + "/" + folder)
+          if(!SlashCommand.options?.public) return;
+          client.slashCommands.set(SlashCommand.data.name, SlashCommand,SlashCommand.options)
+          console.log(chalk.yellow(`💛 [${index}][Slash] Başarıyla ${SlashCommand.data.name} event başarıyla yüklendi`));
+          data.push({
+            name: SlashCommand.data.name,
+            description: SlashCommand.data.description,
+            options: SlashCommand.data.options ? SlashCommand.data.options : null,
+            default_member_permissions: SlashCommand.default_member_permissions
+                ? PermissionsBitField.resolve(
+                    SlashCommand.default_member_permissions
+                ).toString()
+                : null,
+          })
           if(!SlashCommand) return
         }
       })
@@ -79,16 +94,15 @@ function BuildSlash(path, client, token, id, name) {
     }
   })();
 }
-
 const EventLoader = function (path, client) {
   readdirSync(path).forEach((EventLoader, index) => {
     if(EventLoader.endsWith(".js")) {
       const event = new (require(`${path}` + EventLoader))()
       if (event.name) {
         client.on(event.name, event.execute)
-        console.log(chalk.magenta(`🟣 [Event] Başarıyla ` + event.name + " event başarıyla yüklendi"));
+        console.log(Status(`🩵 [Event] Başarıyla` + event.name + " event başarıyla yüklendi"));
       } else {
-        console.log(chalk.red(`🔴 ${file} yüklenemedi`));
+        console.log(Danger(`☠️ ${file} yüklenemedi`));
       }
     } else {
       readdirSync(path + EventLoader + "/").forEach(folder => {
@@ -97,21 +111,15 @@ const EventLoader = function (path, client) {
           const event = new (require(`${path}` + EventLoader + "/" + folder))()
           if (event.name) {
             client.on(event.name, event.execute)
-            console.log(chalk.magenta(`🟣 [Event] Başarıyla ` + event.name + " event başarıyla yüklendi"));
+            console.log(Status(`🩵 [Event] Başarıyla` + event.name + " event başarıyla yüklendi"));
           } else {
-            console.log(chalk.red(`🔴 ${file} yüklenemedi`));
+            console.log(Danger(`☠️ ${file} yüklenemedi`));
           }
         }
       })
     }
   })
 }
-
-
-
-
-
-
 
 module.exports = {
   BuildCommands,

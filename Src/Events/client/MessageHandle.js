@@ -1,8 +1,9 @@
 const config = global.config
-const client = Underline.Ghost
+const client = Underline.Thealoq
+const { Events: Event } = require("discord.js")
 class Events {
     constructor() {
-        this.name = "messageCreate"
+        this.name = Event.MessageCreate
     }
     execute(message) {
         if (message.author.bot) return;

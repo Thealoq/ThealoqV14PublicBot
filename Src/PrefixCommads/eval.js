@@ -1,6 +1,6 @@
 const { codeBlock } = require("@discordjs/builders");
 const config = global.config
-const client = Underline.Ghost
+const client = Underline.Thealoq
 module.exports = {
     name: "eval",
     aliases: ["eval"],

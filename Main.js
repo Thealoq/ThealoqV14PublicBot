@@ -1,21 +1,22 @@
 const { BuildCommands, BuildSlash, EventLoader } = require("./Build")
-const config = global.config = {
-  "token": "MTAyODI1MjUyMTM2MzQyMzI5NA.GAEwoi.gMYs5QBpXIkIe6FI920LDzEiwFCgzeedMqnhtM",
-  "token2":"MTA2OTIxMTk2Nzk5NjMwMTM2Mg.GqeBv3.oa-xLeJBUAhuPRoJb56ndyp_5V7t9CbBxjRT8k",
-  "url": "mongodb+srv://thealoq:lBoCuPJSjNf4AXnX@cluster0.bmkjbyb.mongodb.net/?retryWrites=true&w=majority",
-  "prefix": ".",
-  "footer":"Ghost 💛 Thealoq",
-  "botOwner": ["1000776223795970108"]
-}
-const mongoose = require('mongoose');
-const chalk = require("chalk")
+const config = require('./config');
+let { Db } = require("./DataBase")
+global.config = config;
+Db(config)
+config.dev = false
+let token = global.config.dev ? global.config.token2 : global.config.token;
 require("./underline.js")
-mongoose.set('strictQuery', true).connect(config.url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(e => console.log(chalk.magenta("🟣 [Event] Database Bağlandı")))
-Underline.Ghost.on("ready", () => {
-  BuildSlash(`${__dirname}/Src/Commands/`,  Underline.Ghost, global.config.token,  Underline.Ghost.user.id)
-  BuildCommands(`${__dirname}/Src/PrefixCommads/`,  Underline.Ghost)
-  EventLoader(`${__dirname}/Src/Events/`,  Underline.Ghost)
+Underline.Thealoq.on("ready", () => {
+  Underline.Thealoq.user.setPresence({ activities: [{ name: config.footer},{ name: config.footer2}], status: 'online' });
+  BuildSlash(`${__dirname}/Src/Commands/`,  Underline.Thealoq, token,  Underline.Thealoq.user.id)
+  BuildCommands(`${__dirname}/Src/PrefixCommads/`,  Underline.Thealoq)
+  EventLoader(`${__dirname}/Src/Events/`,  Underline.Thealoq)
 })
+
+
+
+
+
+
+
+

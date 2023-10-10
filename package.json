@@ -1,17 +1,22 @@
 {
-  "name": "thealoq-projectapps",
+  "name": "thealoq_publicbot",
   "version": "1.0.0",
   "description": "",
   "main": "Main.js",
   "scripts": {
-    "dev": "node ."
+    "dev": "clear && node ."
   },
   "keywords": [],
   "author": "thealoq",
   "license": "ISC",
   "dependencies": {
-    "chalk": "4",
+    "@discordjs/builders": "^1.6.3",
+    "@discordjs/rest": "^1.7.1",
+    "@napi-rs/canvas": "^0.1.41",
+    "canvas": "^2.11.2",
+    "chalk": "^4.1.2",
     "discord.js": "^14.7.1",
+    "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "moment": "^2.29.4",
     "mongoose": "^6.8.0",
